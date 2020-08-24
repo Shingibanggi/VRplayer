@@ -21,7 +21,6 @@ public class ButtonMananger : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
         if (triggerEnter)
@@ -64,7 +63,7 @@ public class ButtonMananger : MonoBehaviour
     {
         string myurl = "";
 
-        //현재 url 찾기
+        //Find the url playing now
         GameObject pparent = transform.parent.gameObject.transform.parent.gameObject;
         GameObject video = pparent.transform.Find("video").gameObject;
         myurl = video.GetComponent<VideoPlayer>().url;

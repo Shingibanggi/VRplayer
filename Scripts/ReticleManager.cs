@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-//영상 보고 있을 때는 포인터 감추기
+//Hide pointer when watching video
 public class ReticleManager : MonoBehaviour
 {
     public MeshRenderer Renderer;

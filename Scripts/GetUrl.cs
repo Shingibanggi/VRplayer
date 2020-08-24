@@ -7,13 +7,12 @@ public class GetUrl : MonoBehaviour
     GameObject VideoToPlay;
     VideoPlayer player;
 
-    // Start is called before the first frame update
     void Start()
     {
         VideoToPlay = GameObject.Find("VideoToPlay");
         myUrl = VideoToPlay.GetComponent<DeliverUrl>().url;
 
-        //myurl 을 video player의 url로 넘기기
+        //pass myurl to the url of video player
         player = GetComponent<VideoPlayer>();
         player.url = myUrl;
     }

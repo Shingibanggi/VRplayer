@@ -5,7 +5,6 @@ public class DeliverUrl : MonoBehaviour
     public string url = "";
     public GameObject VideotoPlay;
 
-    // Start is called before the first frame update
     void Start()
     {
         VideotoPlay = this.gameObject;

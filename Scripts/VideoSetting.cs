@@ -6,7 +6,6 @@ public class VideoSetting : MonoBehaviour
     private VideoPlayer player;
     private ushort track_num = 1;
 
-    // Start is called before the first frame update
     void Awake()
     {
         player = GetComponent<VideoPlayer>();
@@ -20,4 +19,5 @@ public class VideoSetting : MonoBehaviour
 
         player.controlledAudioTrackCount = track_num;
     }
+
 }
