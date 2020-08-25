@@ -19,7 +19,7 @@ It provides 2 ways for video playback. You can set the YouTube urls to play.
 
  **1. Scale Up & Play**
  ----------
- **Play video after scaled up**
+ Scale up and play when you look at the video
 
 <img width="500" alt="2_1" src="https://user-images.githubusercontent.com/31753296/91165835-5af74600-e70c-11ea-83a9-46d0c8a598c1.png">
 
