@@ -8,12 +8,14 @@ public class Preview : MonoBehaviour
     private VideoPlayer _player;
     private bool _isLoaded = false;
 
+    // Use this for initialization
     private void Start()
     {
         _player = GetComponent<VideoPlayer>();
         _player.SetDirectAudioMute(0, true);
     }
 
+    // Update is called once per frame
     private void Update()
     {
         if (!_isLoaded)

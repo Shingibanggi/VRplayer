@@ -8,6 +8,7 @@ public class GetUrl : MonoBehaviour
 
     public GameObject videoToPlay;
 
+    // Use this for initialization
     private void Start()
     {
         getUrl();

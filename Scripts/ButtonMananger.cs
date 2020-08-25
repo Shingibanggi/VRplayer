@@ -15,6 +15,7 @@ public class ButtonMananger : MonoBehaviour
         InitializeButton();
     }
 
+    // Update is called once per frame
     private void Update()
     {
         if (_triggerEnter)

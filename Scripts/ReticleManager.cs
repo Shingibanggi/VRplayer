@@ -5,6 +5,7 @@ public class ReticleManager : MonoBehaviour
 {
     private MeshRenderer _pointerRenderer;
 
+    // Use this for initialization
     private void Start()
     {
         _pointerRenderer = GameObject.Find("GvrReticlePointer").GetComponent<MeshRenderer>();

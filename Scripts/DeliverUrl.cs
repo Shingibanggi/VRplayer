@@ -5,6 +5,7 @@ public class DeliverUrl : MonoBehaviour
     public string videoUrl = "";
     private GameObject videotoPlay;
 
+    // Use this for initialization
     void Start()
     {
         //to keep the url on the scene transition

@@ -10,6 +10,7 @@ public class SizeControl : MonoBehaviour
     public AnimationClip expandingClip;
     public AnimationClip reducingClip;
 
+    // Use this for initialization
     void Start()
     {
         _player = GetComponent<VideoPlayer>();

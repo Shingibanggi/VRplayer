@@ -15,6 +15,7 @@ public class VideoManager : MonoBehaviour
         InitializeVideo();
     }
 
+    // Use this for initialization
     private void Start()
     {
         YoutubePlay();
