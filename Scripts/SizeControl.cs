@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Video;
 
+//Control the video size
 public class SizeControl : MonoBehaviour
 {
     private VideoPlayer player;
@@ -19,18 +20,22 @@ public class SizeControl : MonoBehaviour
 
     public void ExpandVideo()
     {
+        //set the animation clip and play it
         parent.GetComponent<Animation>().clip = Expand_clip;
         parent.GetComponent<Animation>().Play();
 
+        //Unmute and play video
         player.SetDirectAudioMute(0, false);
         player.Play();
     }
 
     public void ReduceVideo()
     {
+        //Pause and mute the video 
         player.Pause();
         player.SetDirectAudioMute(0, true);
 
+        //set the animation clip and play
         parent.GetComponent<Animation>().clip = Reduce_clip;
         parent.GetComponent<Animation>().Play();
     }

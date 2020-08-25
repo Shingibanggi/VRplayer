@@ -16,22 +16,28 @@ public class Preview : MonoBehaviour
 
     void Update()
     {
-        //Display (first) frame
         if (!IsLoaded)
         {
-            if (player.frame >= 10.0f)
-            {
-                player.Pause();
-                IsLoaded = true;
-            }
+            DisplayThumbnail();
         }
     }
 
+    void DisplayThumbnail()
+    {
+        if (player.frame >= 10.0f)
+        {
+            player.Pause();
+            IsLoaded = true;
+        }
+    }
+
+    //Event trigger setting required
     public void OnPointerEnter()
     {
         player.Play();
     }
 
+    //Event trigger setting required
     public void OnPointerExit()
     {
         player.Pause();

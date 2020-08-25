@@ -8,6 +8,11 @@ public class VideoSetting : MonoBehaviour
 
     void Awake()
     {
+        VideoInitialSetting();
+    }
+
+    void VideoInitialSetting()
+    {
         player = GetComponent<VideoPlayer>();
         player.playOnAwake = true;
         player.waitForFirstFrame = true;
@@ -19,5 +24,4 @@ public class VideoSetting : MonoBehaviour
 
         player.controlledAudioTrackCount = track_num;
     }
-
 }

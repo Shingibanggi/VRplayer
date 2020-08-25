@@ -7,6 +7,7 @@ public class DeliverUrl : MonoBehaviour
 
     void Start()
     {
+        //to keep the url on the scene transition
         VideotoPlay = this.gameObject;
         DontDestroyOnLoad(VideotoPlay);
     }

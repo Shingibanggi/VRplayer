@@ -9,10 +9,16 @@ public class GetUrl : MonoBehaviour
 
     void Start()
     {
+        getUrl();
+    }
+
+    void getUrl()
+    {
+        //Find the url passed by MainScene
         VideoToPlay = GameObject.Find("VideoToPlay");
         myUrl = VideoToPlay.GetComponent<DeliverUrl>().url;
 
-        //pass myurl to the url of video player
+        //Set the url to play
         player = GetComponent<VideoPlayer>();
         player.url = myUrl;
     }
