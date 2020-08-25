@@ -5,41 +5,41 @@ using UnityEngine.Video;
 public class Preview : MonoBehaviour
 {
 
-    private VideoPlayer player;
-    private bool IsLoaded = false;
+    private VideoPlayer _player;
+    private bool _isLoaded = false;
 
-    void Start()
+    private void Start()
     {
-        player = GetComponent<VideoPlayer>();
-        player.SetDirectAudioMute(0, true);
+        _player = GetComponent<VideoPlayer>();
+        _player.SetDirectAudioMute(0, true);
     }
 
-    void Update()
+    private void Update()
     {
-        if (!IsLoaded)
+        if (!_isLoaded)
         {
             DisplayThumbnail();
         }
     }
 
-    void DisplayThumbnail()
+    private void DisplayThumbnail()
     {
-        if (player.frame >= 10.0f)
+        if (_player.frame >= 10.0f)
         {
-            player.Pause();
-            IsLoaded = true;
+            _player.Pause();
+            _isLoaded = true;
         }
     }
 
     //Event trigger setting required
     public void OnPointerEnter()
     {
-        player.Play();
+        _player.Play();
     }
 
     //Event trigger setting required
     public void OnPointerExit()
     {
-        player.Pause();
+        _player.Pause();
     }
 }

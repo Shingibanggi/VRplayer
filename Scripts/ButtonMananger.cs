@@ -5,24 +5,23 @@ using UnityEngine.Video;
 
 public class ButtonMananger : MonoBehaviour
 { 
-    static bool PlayScene = false;  
-    bool triggerEnter = false;
-    float progress = 0f;
-
-    private Image playButton;
+    private static bool _isPlayScene = false;  
+    private bool _triggerEnter = false;
+    private float _progress = 0f;
+    private Image _playButton;
 
     private void Awake()
     {
-        ButtonInitialSetting();
+        InitializeButton();
     }
 
-    void Update()
+    private void Update()
     {
-        if (triggerEnter)
+        if (_triggerEnter)
         {
             FillButtonGauge();
 
-            if (progress >= 1f)
+            if (_progress >= 1f)
             {
                 ChangeScene();
             }
@@ -30,64 +29,62 @@ public class ButtonMananger : MonoBehaviour
     }
 
     //Change the scene (PlayScene <-> MainScene)
-    void ChangeScene()
+    private void ChangeScene()
     {
-        if (!PlayScene)
+        if (!_isPlayScene)
         {
-            PlayScene = true;
+            _isPlayScene = true;
             SetUrl();
             SceneManager.LoadScene("PlayVideo");
         }
         else
         {
-            PlayScene = false;
+            _isPlayScene = false;
             SceneManager.LoadScene("MainMenu");
         }
     }
 
-    void ButtonInitialSetting()
+    private void InitializeButton()
     {
-        playButton = GetComponent<Image>();
-        playButton.type = Image.Type.Filled;
-        playButton.fillMethod = Image.FillMethod.Radial360;
-        playButton.fillAmount = 0f;
+        _playButton = GetComponent<Image>();
+        _playButton.type = Image.Type.Filled;
+        _playButton.fillMethod = Image.FillMethod.Radial360;
+        _playButton.fillAmount = 0f;
     }
 
     //The button gauge fills up when the user's gaze is reached
     private void FillButtonGauge()
     {
-        if (triggerEnter)
+        if (_triggerEnter)
         {
-            progress = progress + Time.deltaTime;
-            playButton.fillAmount = progress;
+            _progress += Time.deltaTime;
+            _playButton.fillAmount = _progress;
         }
     }
 
-    void SetUrl()
+    private void SetUrl()
     {
-        string myurl = "";
-
         //Find the url playing now
         GameObject pparent = transform.parent.gameObject.transform.parent.gameObject;
         GameObject video = pparent.transform.Find("video").gameObject;
-        myurl = video.GetComponent<VideoPlayer>().url;
+        string myurl = video.GetComponent<VideoPlayer>().url;
 
         //Set the url to play in PlayScene
-        GameObject.Find("VideoToPlay").GetComponent<DeliverUrl>().SetUrl(myurl);
+        GameObject.Find("videoToPlay").GetComponent<DeliverUrl>().SetUrl(myurl);
     }
 
 
     //Event trigger setting required
     public void OnPointerEnter()
     {
-        triggerEnter = true;
+        _triggerEnter = true;
     }
 
     //Event trigger setting required
     public void OnPointerExit()
     {
-        triggerEnter = false;
-        progress = 0f;
-        playButton.fillAmount = 0f;
+        _triggerEnter = false;
+        _progress = 0f;
+        _playButton.fillAmount = 0f;
     }
 }

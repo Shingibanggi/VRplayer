@@ -4,40 +4,40 @@ using UnityEngine.Video;
 //Control the video size
 public class SizeControl : MonoBehaviour
 {
-    private VideoPlayer player;
-    private GameObject parent;
+    private VideoPlayer _player;
+    private GameObject _parent;
 
-    public AnimationClip Expand_clip;
-    public AnimationClip Reduce_clip;
+    public AnimationClip expandingClip;
+    public AnimationClip reducingClip;
 
     void Start()
     {
-        player = GetComponent<VideoPlayer>();
-        player.SetDirectAudioMute(0, true);
+        _player = GetComponent<VideoPlayer>();
+        _player.SetDirectAudioMute(0, true);
 
-        parent = transform.parent.gameObject;
+        _parent = transform.parent.gameObject;
     }
 
     public void ExpandVideo()
     {
         //set the animation clip and play it
-        parent.GetComponent<Animation>().clip = Expand_clip;
-        parent.GetComponent<Animation>().Play();
+        _parent.GetComponent<Animation>().clip = expandingClip;
+        _parent.GetComponent<Animation>().Play();
 
         //Unmute and play video
-        player.SetDirectAudioMute(0, false);
-        player.Play();
+        _player.SetDirectAudioMute(0, false);
+        _player.Play();
     }
 
     public void ReduceVideo()
     {
         //Pause and mute the video 
-        player.Pause();
-        player.SetDirectAudioMute(0, true);
+        _player.Pause();
+        _player.SetDirectAudioMute(0, true);
 
         //set the animation clip and play
-        parent.GetComponent<Animation>().clip = Reduce_clip;
-        parent.GetComponent<Animation>().Play();
+        _parent.GetComponent<Animation>().clip = reducingClip;
+        _parent.GetComponent<Animation>().Play();
     }
 
 

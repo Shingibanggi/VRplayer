@@ -2,18 +2,18 @@
 
 public class DeliverUrl : MonoBehaviour
 {
-    public string url = "";
-    public GameObject VideotoPlay;
+    public string videoUrl = "";
+    private GameObject videotoPlay;
 
     void Start()
     {
         //to keep the url on the scene transition
-        VideotoPlay = this.gameObject;
-        DontDestroyOnLoad(VideotoPlay);
+        videotoPlay = this.gameObject;
+        DontDestroyOnLoad(videotoPlay);
     }
 
-    public void SetUrl(string _url)
+    public void SetUrl(string Url)
     {
-        this.url = _url;
+        this.videoUrl = Url;
     }
 }

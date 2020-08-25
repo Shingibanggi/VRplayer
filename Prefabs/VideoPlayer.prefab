@@ -123,7 +123,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: https://r2---sn-n3cgv5qc5oq-bh2lz.googlevideo.com/videoplayback?expire=1598032709&ei=5bY_X-HwB7WQz7sPoP6w0A8&ip=58.122.153.145&id=o-AKnuX_gNunwNyHVg5A68zFscyopTrWQpUN8hMwUAU4k0&itag=22&source=youtube&requiressl=yes&mh=cn&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2lz%2Csn-i3beln7r&ms=au%2Conr&mv=m&mvi=2&pcm2cms=yes&pl=13&initcwndbps=1391250&vprv=1&mime=video%2Fmp4&ratebypass=yes&dur=72.724&lmt=1554737878870935&mt=1598010998&fvip=2&c=WEB&txp=5535432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgCjw0va85bdaRLnOT4La40D8D5bBnZ9rOcZd6aRp33BACIQCNVhDVW4q7V4AYY4cReoGZAKW4H9e2Eqay15hrRqGGyw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAKRSZ7ECzuJ1KQmNt_WOFqLxSym8MEJeU6BMQTmW9s10AiBo1JUktFFXjnj3MVmGHG9_JQkUc-j0DollasTVblOXhQ%3D%3D
+  m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -139,12 +139,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5203173050956446712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3768fe280903842fdaa2a016022624f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  youtubeUrl: https://www.youtube.com/watch?v=jBdRhhSt3Bc&t=1s
+  youtubeUrl: 
 --- !u!114 &3490302122692502889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,8 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbc25f31ac3c4f65905afb3b7f2c49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Expand_clip: {fileID: 7400000, guid: d0363f6b7bd3b44be97d9d1d68113b63, type: 2}
-  Reduce_clip: {fileID: 7400000, guid: 1661f7952e85c469eabf684c028b3e98, type: 2}
+  expandingClip: {fileID: 7400000, guid: d0363f6b7bd3b44be97d9d1d68113b63, type: 2}
+  reducingClip: {fileID: 7400000, guid: 1661f7952e85c469eabf684c028b3e98, type: 2}
 --- !u!114 &3052093454167633356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,9 +168,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5203173050956446712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96783fe7f7d249a48eff004c63c277b, type: 3}
+  m_Script: {fileID: 11500000, guid: f5a97a2317e1c458f94332e2f38f8f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  youtubeUrl: 
 --- !u!1 &5704881183001007301
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,4 +403,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04fe5de28f33454baa56026cf94300f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Renderer: {fileID: 0}

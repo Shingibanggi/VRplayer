@@ -3,23 +3,24 @@ using UnityEngine.Video;
 
 public class GetUrl : MonoBehaviour
 {
-    string myUrl = "";
-    GameObject VideoToPlay;
-    VideoPlayer player;
+    private string _Url = "";
+    private VideoPlayer _player;
 
-    void Start()
+    public GameObject videoToPlay;
+
+    private void Start()
     {
         getUrl();
     }
 
-    void getUrl()
+    private void getUrl()
     {
         //Find the url passed by MainScene
-        VideoToPlay = GameObject.Find("VideoToPlay");
-        myUrl = VideoToPlay.GetComponent<DeliverUrl>().url;
+        videoToPlay = GameObject.Find("videoToPlay");
+        _Url = videoToPlay.GetComponent<DeliverUrl>().videoUrl;
 
         //Set the url to play
-        player = GetComponent<VideoPlayer>();
-        player.url = myUrl;
+        _player = GetComponent<VideoPlayer>();
+        _player.url = _Url;
     }
 }
