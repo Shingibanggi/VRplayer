@@ -4,7 +4,7 @@ using UnityEngine.Video;
 //Control the video size
 public class SizeControl : MonoBehaviour
 {
-    private VideoPlayer _player;
+    private VideoManager _video;
     private GameObject _parent;
 
     public AnimationClip expandingClip;
@@ -13,9 +13,8 @@ public class SizeControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _player = GetComponent<VideoPlayer>();
-        _player.SetDirectAudioMute(0, true);
-
+        _video = GetComponent<VideoManager>();
+        _video.Mute();
         _parent = transform.parent.gameObject;
     }
 
@@ -26,15 +25,15 @@ public class SizeControl : MonoBehaviour
         _parent.GetComponent<Animation>().Play();
 
         //Unmute and play video
-        _player.SetDirectAudioMute(0, false);
-        _player.Play();
+        _video.Unmute();
+        _video.Play();
     }
 
     public void ReduceVideo()
     {
         //Pause and mute the video 
-        _player.Pause();
-        _player.SetDirectAudioMute(0, true);
+        _video.Pause();
+        _video.Mute();
 
         //set the animation clip and play
         _parent.GetComponent<Animation>().clip = reducingClip;

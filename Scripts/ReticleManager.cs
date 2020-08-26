@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-//Hide pointer when watching video
 public class ReticleManager : MonoBehaviour
 {
     private MeshRenderer _pointerRenderer;
@@ -12,12 +11,12 @@ public class ReticleManager : MonoBehaviour
     }
 
 
-    public void OnPointerEnter()
+    public void HideReticle()
     {
         _pointerRenderer.enabled = false;
     }
 
-    public void OnPointerExit()
+    public void ShowReticle()
     {
         _pointerRenderer.enabled = true;
     }

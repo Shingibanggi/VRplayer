@@ -5,14 +5,14 @@ using UnityEngine.Video;
 public class Preview : MonoBehaviour
 {
 
-    private VideoPlayer _player;
+    private VideoManager _video;
     private bool _isLoaded = false;
 
     // Use this for initialization
     private void Start()
     {
-        _player = GetComponent<VideoPlayer>();
-        _player.SetDirectAudioMute(0, true);
+        _video = GetComponent<VideoManager>();
+        _video.Mute();
     }
 
     // Update is called once per frame
@@ -26,22 +26,22 @@ public class Preview : MonoBehaviour
 
     private void DisplayThumbnail()
     {
-        if (_player.frame >= 10.0f)
+        if (_video.player.frame >= 10.0f)
         {
-            _player.Pause();
+            _video.Pause();
             _isLoaded = true;
         }
     }
-
+    
     //Event trigger setting required
     public void OnPointerEnter()
     {
-        _player.Play();
+        _video.Play();
     }
 
     //Event trigger setting required
     public void OnPointerExit()
     {
-        _player.Pause();
+        _video.Pause();
     }
 }

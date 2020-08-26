@@ -6,19 +6,16 @@ public class GetUrl : MonoBehaviour
     private string _Url = "";
     private VideoPlayer _player;
 
-    public GameObject videoToPlay;
-
     // Use this for initialization
     private void Start()
     {
-        getUrl();
+        GetYoutubeUrl();
     }
 
-    private void getUrl()
+    private void GetYoutubeUrl()
     {
         //Find the url passed by MainScene
-        videoToPlay = GameObject.Find("videoToPlay");
-        _Url = videoToPlay.GetComponent<DeliverUrl>().videoUrl;
+        _Url = GameObject.Find("videoToPlay").GetComponent<DeliverUrl>().videoUrl;
 
         //Set the url to play
         _player = GetComponent<VideoPlayer>();

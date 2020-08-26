@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a97a2317e1c458f94332e2f38f8f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   youtubeUrl: https://www.youtube.com/watch?v=fcueArgm800
 --- !u!114 &421576310
 MonoBehaviour:
@@ -313,7 +314,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: https://r2---sn-n3cgv5qc5oq-bh2lz.googlevideo.com/videoplayback?expire=1598032709&ei=5bY_X-HwB7WQz7sPoP6w0A8&ip=58.122.153.145&id=o-AKnuX_gNunwNyHVg5A68zFscyopTrWQpUN8hMwUAU4k0&itag=22&source=youtube&requiressl=yes&mh=cn&mm=31%2C26&mn=sn-n3cgv5qc5oq-bh2lz%2Csn-i3beln7r&ms=au%2Conr&mv=m&mvi=2&pcm2cms=yes&pl=13&initcwndbps=1391250&vprv=1&mime=video%2Fmp4&ratebypass=yes&dur=72.724&lmt=1554737878870935&mt=1598010998&fvip=2&c=WEB&txp=5535432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgCjw0va85bdaRLnOT4La40D8D5bBnZ9rOcZd6aRp33BACIQCNVhDVW4q7V4AYY4cReoGZAKW4H9e2Eqay15hrRqGGyw%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAKRSZ7ECzuJ1KQmNt_WOFqLxSym8MEJeU6BMQTmW9s10AiBo1JUktFFXjnj3MVmGHG9_JQkUc-j0DollasTVblOXhQ%3D%3D
+  m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -481,7 +482,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 538591890}
-          m_MethodName: OnPointerEnter
+          m_MethodName: HideReticle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -507,7 +508,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 538591890}
-          m_MethodName: OnPointerExit
+          m_MethodName: ShowReticle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -802,6 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a97a2317e1c458f94332e2f38f8f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   youtubeUrl: https://www.youtube.com/watch?v=XdbRsILsJyM
 --- !u!114 &824812814
 MonoBehaviour:
@@ -1247,7 +1249,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1573855221}
-          m_MethodName: OnPointerEnter
+          m_MethodName: HideReticle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1273,7 +1275,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1573855221}
-          m_MethodName: OnPointerExit
+          m_MethodName: ShowReticle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1631,7 +1633,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1821334740}
-          m_MethodName: OnPointerEnter
+          m_MethodName: HideReticle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1657,7 +1659,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1821334740}
-          m_MethodName: OnPointerExit
+          m_MethodName: ShowReticle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1886,6 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a97a2317e1c458f94332e2f38f8f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   youtubeUrl: https://www.youtube.com/watch?v=jBdRhhSt3Bc&t=1s
 --- !u!114 &2023539716
 MonoBehaviour:
@@ -2153,6 +2156,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1825865211}
     m_Modifications:
+    - target: {fileID: 2713764630879134483, guid: 1bf4792714a5744d28e7e1426fc687b2,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HideReticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713764630879134483, guid: 1bf4792714a5744d28e7e1426fc687b2,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowReticle
+      objectReference: {fileID: 0}
     - target: {fileID: 2713764631392508848, guid: 1bf4792714a5744d28e7e1426fc687b2,
         type: 3}
       propertyPath: m_Name
@@ -2221,7 +2234,7 @@ PrefabInstance:
     - target: {fileID: 2713764631392508863, guid: 1bf4792714a5744d28e7e1426fc687b2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 150
+      value: -1136
       objectReference: {fileID: 0}
     - target: {fileID: 2713764631392508863, guid: 1bf4792714a5744d28e7e1426fc687b2,
         type: 3}
@@ -2262,6 +2275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713764632018698896, guid: 1bf4792714a5744d28e7e1426fc687b2,
+        type: 3}
+      propertyPath: m_Url
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2713764632018698897, guid: 1bf4792714a5744d28e7e1426fc687b2,
         type: 3}

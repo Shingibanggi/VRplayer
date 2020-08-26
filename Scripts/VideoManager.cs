@@ -3,7 +3,7 @@ using UnityEngine.Video;
 
 public class VideoManager : MonoBehaviour
 {
-    private VideoPlayer _player;
+    public VideoPlayer player;
     private readonly ushort _nTrack = 1;
 
     private YoutubePlayer.YoutubePlayer _youtubePlayer;
@@ -23,16 +23,16 @@ public class VideoManager : MonoBehaviour
 
     private void InitializeVideo()
     {
-        _player = GetComponent<VideoPlayer>();
-        _player.playOnAwake = true;
-        _player.waitForFirstFrame = true;
-        _player.isLooping = true;
-        _player.playbackSpeed = 1;
+        player = GetComponent<VideoPlayer>();
+        player.playOnAwake = true;
+        player.waitForFirstFrame = true;
+        player.isLooping = true;
+        player.playbackSpeed = 1;
 
-        _player.renderMode = VideoRenderMode.MaterialOverride;
-        _player.audioOutputMode = VideoAudioOutputMode.Direct;
+        player.renderMode = VideoRenderMode.MaterialOverride;
+        player.audioOutputMode = VideoAudioOutputMode.Direct;
 
-        _player.controlledAudioTrackCount = _nTrack;
+        player.controlledAudioTrackCount = _nTrack;
     }
 
     private void YoutubePlay()
@@ -42,5 +42,25 @@ public class VideoManager : MonoBehaviour
         _youtubePlayer.youtubeUrl = this.youtubeUrl;
 
         _youtubePlayer.enabled = true;
+    }
+
+    public void Play()
+    {
+        player.Play();
+    }
+
+    public void Pause()
+    {
+        player.Pause();
+    }
+
+    public void Mute()
+    {
+        player.SetDirectAudioMute(0, true);
+    }
+
+    public void Unmute()
+    {
+        player.SetDirectAudioMute(0, false);
     }
 }
